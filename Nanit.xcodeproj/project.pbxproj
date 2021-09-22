@@ -15,6 +15,7 @@
 		ED0B546226F77EF100BAAE4F /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B546126F77EF100BAAE4F /* Modifiers.swift */; };
 		ED0B546426F780B000BAAE4F /* CircleCameraIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B546326F780B000BAAE4F /* CircleCameraIcon.swift */; };
 		ED0B546726F786EF00BAAE4F /* AnniversaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B546626F786EF00BAAE4F /* AnniversaryType.swift */; };
+		ED0B546B26F7932B00BAAE4F /* BabyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B546A26F7932B00BAAE4F /* BabyRepository.swift */; };
 		ED4925CA26F0EC8E007EB0AF /* NanitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4925C926F0EC8E007EB0AF /* NanitApp.swift */; };
 		ED4925CC26F0EC8E007EB0AF /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4925CB26F0EC8E007EB0AF /* DetailsView.swift */; };
 		ED4925CE26F0EC90007EB0AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED4925CD26F0EC90007EB0AF /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		ED0B546126F77EF100BAAE4F /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		ED0B546326F780B000BAAE4F /* CircleCameraIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCameraIcon.swift; sourceTree = "<group>"; };
 		ED0B546626F786EF00BAAE4F /* AnniversaryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryType.swift; sourceTree = "<group>"; };
+		ED0B546A26F7932B00BAAE4F /* BabyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyRepository.swift; sourceTree = "<group>"; };
 		ED4925C626F0EC8E007EB0AF /* Nanit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nanit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4925C926F0EC8E007EB0AF /* NanitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanitApp.swift; sourceTree = "<group>"; };
 		ED4925CB26F0EC8E007EB0AF /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -53,13 +55,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED0869C726F73C6E003F43A9 /* View Styles & Extensions */ = {
+		ED0869C726F73C6E003F43A9 /* View Styles & Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				ED0869C926F73CB6003F43A9 /* Styles.swift */,
 				ED0B546126F77EF100BAAE4F /* Modifiers.swift */,
 			);
-			path = "View Styles & Extensions";
+			path = "View Styles & Modifiers";
 			sourceTree = "<group>";
 		};
 		ED0869C826F73C79003F43A9 /* Views */ = {
@@ -104,6 +106,14 @@
 			path = "View Components";
 			sourceTree = "<group>";
 		};
+		ED0B546926F7931800BAAE4F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED0B546A26F7932B00BAAE4F /* BabyRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		ED4925BD26F0EC8E007EB0AF = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +133,14 @@
 		ED4925C826F0EC8E007EB0AF /* Nanit */ = {
 			isa = PBXGroup;
 			children = (
+				ED0B546926F7931800BAAE4F /* Repository */,
 				ED0B545E26F7689000BAAE4F /* Utilties */,
 				ED0869CB26F73D68003F43A9 /* Global */,
 				ED0B546826F78DB100BAAE4F /* View Components */,
 				ED0869C826F73C79003F43A9 /* Views */,
 				EDCDCDD926F75D5400E3BF4D /* View Models */,
 				ED0B546526F786DE00BAAE4F /* Models */,
-				ED0869C726F73C6E003F43A9 /* View Styles & Extensions */,
+				ED0869C726F73C6E003F43A9 /* View Styles & Modifiers */,
 				ED4925C926F0EC8E007EB0AF /* NanitApp.swift */,
 				ED4925CD26F0EC90007EB0AF /* Assets.xcassets */,
 				EDCDCDD726F73FD300E3BF4D /* Colors.xcassets */,
@@ -230,6 +241,7 @@
 				ED0B545D26F7661800BAAE4F /* BirthdayView.swift in Sources */,
 				ED0869CD26F73D8A003F43A9 /* Colors.swift in Sources */,
 				EDCDCDDB26F75D6F00E3BF4D /* DetailsViewModel.swift in Sources */,
+				ED0B546B26F7932B00BAAE4F /* BabyRepository.swift in Sources */,
 				ED4925CC26F0EC8E007EB0AF /* DetailsView.swift in Sources */,
 				ED0B546426F780B000BAAE4F /* CircleCameraIcon.swift in Sources */,
 				ED0B546026F768A300BAAE4F /* ImagePicker.swift in Sources */,
@@ -365,6 +377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Nanit/Preview Content\"";
+				DEVELOPMENT_TEAM = 96Q22CQ4ED;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Nanit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -386,6 +399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Nanit/Preview Content\"";
+				DEVELOPMENT_TEAM = 96Q22CQ4ED;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Nanit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
