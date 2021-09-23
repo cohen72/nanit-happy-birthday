@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum AnniversaryType {
+enum AnniversaryType: Int {
   case blue
   case green
   case yellow
@@ -44,5 +44,32 @@ enum AnniversaryType {
     case .yellow:
       return Color.goldenYellow
     }
+  }
+  
+  var bgColor: Color {
+    switch self {
+    case .blue:
+      return Color.lightBlueGrey
+    case .green:
+      return Color.lightBlueGreyTwo
+    case .yellow:
+      return Color.pale
+    }
+  }
+  
+  var bgImageName: String {
+    switch self {
+    case .blue:
+      return "bgPelican"
+    case .green:
+      return "bgFox"
+    case .yellow:
+      return "bgElephant"
+    }
+  }
+  
+  static var randomAnniversaryType: AnniversaryType {
+    let randomInt = Int.random(in: 1..<4)
+    return AnniversaryType(rawValue: randomInt) ?? AnniversaryType.blue
   }
 }

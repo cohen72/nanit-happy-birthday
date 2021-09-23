@@ -10,4 +10,5 @@ import SwiftUI
 
 let enterDateOfBirthLabel: LocalizedStringKey = "Enter Date of Birth"
 let dateOfBirthLabel: LocalizedStringKey = "Date of Birth"
-let showBirthdayScreen = "Show Birthday Screen"
+let showBirthdayScreen: LocalizedStringKey = "Show Birthday Screen"
+let shareTheNews: LocalizedStringKey = "Share the news"

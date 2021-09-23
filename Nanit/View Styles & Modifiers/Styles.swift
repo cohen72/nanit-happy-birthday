@@ -11,7 +11,8 @@ struct GrowingButtonStyle: ButtonStyle {
   var isDisabled: Bool = false
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
-      .padding()
+      .frame(height: 42)
+      .padding(.horizontal)
       .background(self.isDisabled ? Color.gray : Color.blush)
       .foregroundColor(.white)
       .clipShape(Capsule())

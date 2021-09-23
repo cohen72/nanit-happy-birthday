@@ -25,20 +25,11 @@ struct DetailsView: View {
           DatePicker(viewModel.dateOfBirthPlaceholder, selection: $viewModel.dateOfBirth, in: ...Date(), displayedComponents: .date)
         }.modifier(FormFieldModifier())
         VStack {
-          Group {
-            if viewModel.image != nil {
-              viewModel.image?.resizable().scaledToFill()
-            } else {
-              Image("defaultPlaceHolderBlue").resizable().scaledToFit()
-            }
-          }
+          CircleCameraIconView(iconSize: 20, image: viewModel.imagePickerViewModel.image, borderWidth: 3.0)
           .frame(width: 60, height: 60, alignment: .center)
-          .clipShape(Circle())
-          .overlay(CircleCameraIconView(anniversaryType: .blue, iconScale: 0.4))
           .onTapGesture {
             self.showingActionSheet = true
           }
-          Spacer()
         }
         Spacer()
         NavigationLink(destination: BirthdayView()) {
@@ -50,24 +41,14 @@ struct DetailsView: View {
       .navigationTitle("")
       .navigationBarHidden(true)
       .background(Color.white.edgesIgnoringSafeArea(.all))
-      .sheet(isPresented: $viewModel.showingImagePicker, onDismiss: viewModel.loadImage) {
-        ImagePicker(image: $viewModel.inputImage)
-      }
-      .sheet(isPresented: $viewModel.showingCamera, onDismiss: viewModel.loadImage) {
-        ImagePicker(image: $viewModel.inputImage, sourceType: UIImagePickerController.SourceType.camera)
+      .sheet(isPresented: $viewModel.imagePickerViewModel.isPresentingImagePicker, onDismiss: viewModel.imagePickerViewModel.loadImage) {
+        ImagePicker(image: $viewModel.imagePickerViewModel.selectedImage, sourceType: viewModel.imagePickerViewModel.sourceType)
       }
       .actionSheet(isPresented: $showingActionSheet) {
-          ActionSheet(title: Text("Choose a Picture"), buttons: [
-              .default(Text("Camera")) {
-                #if !targetEnvironment(simulator)
-                  viewModel.showingCamera = true
-                #endif
-              },
-              .default(Text("Photo Library")) {
-                viewModel.showingImagePicker = true
-              },
-              .cancel()
-          ])
+        ActionSheet(imagePickerViewModel: viewModel.imagePickerViewModel)
+      }
+      .onAppear {
+        viewModel.updateView()
       }
     }
   }
