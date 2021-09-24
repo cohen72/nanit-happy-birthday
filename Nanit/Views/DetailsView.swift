@@ -24,13 +24,11 @@ struct DetailsView: View {
           Image(systemName: "calendar").foregroundColor(.gray)
           DatePicker(viewModel.dateOfBirthPlaceholder, selection: $viewModel.dateOfBirth, in: ...Date(), displayedComponents: .date)
         }.modifier(FormFieldModifier())
-        VStack {
-          CircleCameraIconView(iconSize: 20, image: viewModel.imagePickerViewModel.image, borderWidth: 3.0)
+        CircleCameraIconView(iconSize: 20, image: viewModel.imagePickerViewModel.image, borderWidth: 3.0)
           .frame(width: 60, height: 60, alignment: .center)
           .onTapGesture {
             self.showingActionSheet = true
-          }
-        }
+          }        
         Spacer()
         NavigationLink(destination: BirthdayView()) {
           Text("Show Detail View").padding(.horizontal, 20)
